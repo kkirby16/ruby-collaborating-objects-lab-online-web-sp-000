@@ -11,10 +11,9 @@ class MP3Importer
   
 def files 
   Dir["#{@path}/*"].map {|x| x.gsub('./spec/fixtures/mp3s/', '')}
-  
 end
 
 def import
   files.each {|filename| Song.new_by_filename(filename)}
 end
-end 
+end
